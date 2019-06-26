@@ -19,3 +19,10 @@ git clone https://github.com/koffisani/coding-data-togo.git
 ```
 pip install -r requirements.txt
 ```
+
+# Comment exécuter 
+
+Pour exécuter ce projet, il faut s'assurer d'avoir activé l'environnement, puis exécuter la commande suivante :
+```
+scrapy runspider scrapy.py
+```
