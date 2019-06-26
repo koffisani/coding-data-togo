@@ -9,7 +9,11 @@ hyperlink==19.0.0
 idna==2.8
 incremental==17.5.0
 lxml==4.3.3
+mysql==0.0.2
+mysql-connector-python==8.0.16
+mysqlclient==1.4.2.post1
 parsel==1.5.1
+protobuf==3.8.0
 pyasn1==0.4.5
 pyasn1-modules==0.2.5
 pycparser==2.19
