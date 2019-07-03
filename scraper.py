@@ -1,14 +1,19 @@
 import scrapy 
+from db import Db
 
 class Scrap(scrapy.Spider):
     name = "togo_coding_job_data"
 
+    db = Db()
+
     def start_requests(self):
         yield scrapy.Request('https://www.emploi.tg/recherche-jobs-togo/?f%5B0%5D=im_field_offre_metiers:31', self.crawl_emploi_tg)
-        '''yield scrapy.Request('https://www.rmo-jobcenter.com/fr/togo/offres-emploi/ntic.html', self.crawl)
+        '''
+        yield scrapy.Request('https://www.rmo-jobcenter.com/fr/togo/offres-emploi/ntic.html', self.crawl)
         yield scrapy.Request('http://www.lucreatif.com/nouvelle_offre_d_emploi.html', self.crawl)
         yield scrapy.Request('https://anpetogo.org/espace-chercheur-d-emploi/nos-offres-demplois/?ajax_filter=true&sort-by=recent&sector_cat=developpement-informatique&posted=all', self.crawl)
-        yield scrapy.Request('https://emploitogo.com/jobs/?layout=list&post_type=jobboard-post-jobs&specialism-filters%5B%5D=58', self.crawl)'''
+        yield scrapy.Request('https://emploitogo.com/jobs/?layout=list&post_type=jobboard-post-jobs&specialism-filters%5B%5D=58', self.crawl)
+        '''
 
     '''
     Crawling data by url : emploi.tg
@@ -36,6 +41,13 @@ class Scrap(scrapy.Spider):
 
     def detail_page_emploi_tg (self, response):
         DETAILS_SELECTOR = '.content'
+        SITE_URL = 'https://www.emploi.tg'
         details = response.css(DETAILS_SELECTOR)
         if details :
-            print ('Détail ', details, sep='=>')
+            print ('Détail ', details.extract_first(), sep='=>')
+            self.db.c.execute("INSERT INTO scraped (site, url, content) VALUES ( ?, ?, ?) ",  (SITE_URL, '', details.extract_first()))
+            self.db.conn.commit()
+            #self.db.conn.close()
+
+    def closed(self, reason):
+        self.db.conn.close()
