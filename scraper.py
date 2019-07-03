@@ -50,4 +50,4 @@ class Scrap(scrapy.Spider):
             #self.db.conn.close()
 
     def closed(self, reason):
-        self.db.conn.close()
+        self.db.close_connection()
