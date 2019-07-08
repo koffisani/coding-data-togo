@@ -40,12 +40,16 @@ class Scrap(scrapy.Spider):
         self.logger.info('A response from %s', response.url)
 
     def detail_page_emploi_tg (self, response):
-        DETAILS_SELECTOR = '.content'
+        DETAILS_SELECTOR = '.content ul li ::text'
         SITE_URL = 'https://www.emploi.tg'
         details = response.css(DETAILS_SELECTOR)
         if details :
-            print ('Détail ', details.extract_first(), sep='=>')
-            self.db.c.execute("INSERT INTO scraped (site, url, content) VALUES ( ?, ?, ?) ",  (SITE_URL, '', details.extract_first()))
+            #print ('Détail ', details.extract(), sep='=>')
+            #print (type(details.extract()))
+            text_list = details.extract()
+            for item in text_list:
+                if not item :
+                     self.db.c.execute("INSERT INTO scraped (site, url, content) VALUES ( ?, ?, ?) ",  (SITE_URL, '', item))
             self.db.conn.commit()
             #self.db.conn.close()
 
