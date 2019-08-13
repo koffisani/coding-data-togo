@@ -24,5 +24,5 @@ pip install -r requirements.txt
 
 Pour exécuter ce projet, il faut s'assurer d'avoir activé l'environnement, puis exécuter la commande suivante :
 ```
-scrapy runspider scrapy.py
+python main.py
 ```
