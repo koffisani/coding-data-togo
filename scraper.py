@@ -4,7 +4,7 @@ from db import Db
 class Scrap(scrapy.Spider):
     name = "togo_coding_job_data"
 
-    db = Db()
+    db = Db.getInstance()
 
     def start_requests(self):
         yield scrapy.Request('https://www.emploi.tg/recherche-jobs-togo?f%5B0%5D=im_field_offre_secteur%3A133', self.crawl_emploi_tg)
