@@ -50,5 +50,5 @@ class Scrap(scrapy.Spider):
                      self.db.c.execute("INSERT INTO scraped (site, url, content) VALUES ( ?, ?, ?) ",  (SITE_URL, '', item))
             self.db.conn.commit()
 
-    def closed(self, reason):
-        self.db.close_connection()
+    #def closed(self, reason):
+    #    self.db.close_connection()

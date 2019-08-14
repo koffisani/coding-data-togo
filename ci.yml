@@ -1,0 +1,8 @@
+on: push
+jobs:
+  test:
+    strategy:
+      platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@master
