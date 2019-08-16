@@ -8,3 +8,7 @@ install:
 
 script:
   - pytest test.py
+  - coverage run test.py
+
+after_success:
+  - coverage report
