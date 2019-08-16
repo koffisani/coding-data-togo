@@ -1,7 +1,7 @@
 # coding-data-togo
 Données sur les langages et outils de développement utilisés ou sollicités au Togo
 
-![https://travis-ci.com/koffisani/coding-data-togo](https://travis-ci.com/koffisani/coding-data-togo.svg?branch=master)
+![https://travis-ci.com/koffisani/coding-data-togo](https://travis-ci.com/koffisani/coding-data-togo.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/koffisani/coding-data-togo/badge.svg?branch=master)](https://coveralls.io/github/koffisani/coding-data-togo?branch=master)
 
 Nous avons besoin mettre en exergue, à partir des données disponibles sur les plate-formes de job en ligne au Togo, les langages et outils de développement utilisés par les entreprises togolaises. Ceci permettra aux jeunes de se positionner comme des talents prêts pour le monde de l'emploi, mais aussi aux écoles de doter les étudiants des technologies les plus utilisées en entreprise.
 
