@@ -106,3 +106,10 @@ venv.bak/
 *.db
 .vscode/
 !db/.gitkeep
+_site/ci.yml
+_site/db.py
+_site/main.py
+_site/scraper.py
+_site/requirements.txt
+_site/test.py
+_site/db
