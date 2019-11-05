@@ -105,6 +105,7 @@ venv.bak/
 
 *.db
 .vscode/
+.idea/
 !db/.gitkeep
 _site/ci.yml
 _site/db.py
