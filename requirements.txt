@@ -21,7 +21,7 @@ idna==2.8
 importlib-metadata==0.19
 incremental==17.5.0
 kiwisolver==1.1.0
-lxml==4.3.3
+lxml==4.6.3
 matplotlib==3.2.1
 more-itertools==8.2.0
 numpy==1.18.4
