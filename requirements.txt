@@ -43,7 +43,7 @@ pytest==5.4.1
 python-dateutil==2.8.0
 queuelib==1.5.0
 requests==2.22.0
-Scrapy==2.1.0
+Scrapy==2.6.0
 service-identity==18.1.0
 six==1.12.0
 starlette==0.13.2
