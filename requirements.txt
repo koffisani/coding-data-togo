@@ -47,7 +47,7 @@ Scrapy==2.1.0
 service-identity==18.1.0
 six==1.12.0
 starlette==0.13.2
-Twisted==20.3.0
+Twisted==22.4.0
 urllib3==1.25.3
 uvicorn==0.11.5
 uvloop==0.14.0
